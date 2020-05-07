@@ -3,7 +3,7 @@ const app = express();
 
 if(process.env.NODE_ENV === 'production'){
   //set static folder
-  app.use(express.static('src'));
+  app.use(express.static('src/index.html'));
 }
 
 
