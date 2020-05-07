@@ -3,30 +3,33 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "node serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --prod",
+    "postinstall": "ng build --prod --aot"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.4",
     "@angular/cdk": "^9.2.2",
+    "@angular/cli": "~9.1.4",
     "@angular/common": "~9.1.4",
     "@angular/compiler": "~9.1.4",
+    "@angular/compiler-cli": "~9.1.4",
     "@angular/core": "~9.1.4",
     "@angular/forms": "~9.1.4",
     "@angular/material": "^9.2.2",
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "@angular/cli": "~9.1.4",
-    "@angular/compiler-cli": "~9.1.4"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.4",
@@ -48,7 +51,7 @@
     "typescript": "~3.8.3"
   },
   "engines": {
-    "node": "6.11.0",
-    "npm": "3.10.10"
+    "node": "12.14.0",
+    "npm": "6.14.5"
   }
 }
