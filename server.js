@@ -5,10 +5,12 @@ app.use('/*', router);
 const path = require('path');
 
 if(process.env.NODE_ENV === 'production'){
-  app.use(express.static(__dirname + '/dist'));
+  app.use(express.static('/dist/web-app/index.html'));
 }
 
-app.use(express.static(__dirname + '/dist'));
+
+app.use(express.static(__dirname + '/dist/web-app'));
+
 app.listen(process.env.PORT || 8080);
 
 //routing
