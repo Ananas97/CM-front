@@ -7,5 +7,5 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 
-app.use(express.static(__dirname + '/dist/we-app'));
+app.use(express.static(__dirname + '/dist/web-app'));
 app.listen(process.env.PORT || 8080);
