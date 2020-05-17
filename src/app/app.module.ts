@@ -8,6 +8,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import {MatInputModule} from '@angular/material/input';
     MatSliderModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonToggleModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
