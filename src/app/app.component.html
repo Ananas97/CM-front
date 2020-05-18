@@ -1,10 +1,12 @@
 <mat-toolbar color="secondary">
   <span>Code measurement</span>
-  <button mat-button style="alignment: center">Archives</button>
-  <button mat-button>Perform analysis</button>
+  <button mat-button routerLink="/" routerLinkActive="active">Home</button>
+  <button mat-button routerLink="archives" routerLinkActive="active">Archives</button>
+  <button mat-button routerLink="analysis" routerLinkActive="active">Perform analysis</button>
 
-  <!-- This fills the remaining space of the current row -->
+  <!--   This fills the remaining space of the current row-->
   <span class="fill-remaining-space"></span>
 
   <button mat-raised-button>Login</button>
 </mat-toolbar>
+<router-outlet></router-outlet>
