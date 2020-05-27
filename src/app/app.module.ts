@@ -8,10 +8,25 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonModule} from '@angular/material/button';
+import {AnalysisComponent} from './analysis/analysis.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {ArchivesComponent} from './archives/archives.component';
+import {APP_BASE_HREF} from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
+import {ProgressComponent} from './analysis/progress/progress.component';
+import {DndDirective} from './analysis/dnd.directive';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AnalysisComponent,
+    ArchivesComponent,
+    ProgressComponent,
+    DndDirective
   ],
   imports: [
     BrowserModule,
@@ -20,10 +35,17 @@ import {MatInputModule} from '@angular/material/input';
     MatSliderModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatCardModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  bootstrap: [AppComponent],
+  exports: [AnalysisComponent, ArchivesComponent]
 })
 export class AppModule {
 }
