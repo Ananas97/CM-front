@@ -4,7 +4,6 @@ import {ApiService} from '../shared/ApiService';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatTableDataSource} from '@angular/material/table';
 import {ClassMetricsDTO} from '../model/classMetricsDTO';
-import {FunctionMetricsDTO} from '../model/functionMetricsDTO';
 
 @Component({
   selector: 'app-archives',
@@ -47,46 +46,11 @@ export class ArchivesComponent implements OnInit {
   }
 
   loadData() {
-    // this.snackBar.open('Data is being loaded, please wait...');
-    this.state.dataSource.data = ELEMENT_DATA;
-    // this.apiService.getProjectList().subscribe(res => {
-    //     this.state.dataSource.data = res;
-    //     this.snackBar.dismiss();
-    //   }, error => {
-    //     this.snackBar.dismiss();
-    //     this.snackBar.open('An error has occurred', 'Close');
-    //   }
-    // );
+    this.apiService.getProjectList().subscribe(res => {
+        this.state.dataSource.data = res;
+      }, error => {
+        console.log(error);
+      }
+    );
   }
 }
-
-const ELEMENT_DATA: ProjectDTO[] = [
-  {
-    projectName: 'name1', lastUploadDate: null, generalMetrics: {
-      numberOfLines: 1, numberOfComments: 1, numberOfNamespaces: 1, numberOfClasses: 1,
-      classMetricsList: [{
-        name: 'className',
-        numberOfLines: 1,
-        depthOfInheritance: 1,
-        functionMetricsList: null,
-        numberOfChildren: 1,
-        numberOfComments: 1,
-        weightedMethods: 1
-      }],
-    }
-  },
-  {
-    projectName: 'name2', lastUploadDate: null, generalMetrics: {
-      numberOfLines: 1, numberOfComments: 1, numberOfNamespaces: 1, numberOfClasses: 1,
-      classMetricsList: [{
-        name: 'className',
-        numberOfLines: 1,
-        depthOfInheritance: 1,
-        functionMetricsList: [{name: 'function', numberOfLines: 2137, numberOfComments: 3, nestedBlockDepth: 80}],
-        numberOfChildren: 1,
-        numberOfComments: 1,
-        weightedMethods: 1
-      }],
-    }
-  },
-];
