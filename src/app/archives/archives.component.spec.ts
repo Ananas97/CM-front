@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ArchivesComponent } from './archives.component';
+import {MatTableModule} from '@angular/material/table';
 
 describe('ArchivesComponent', () => {
   let component: ArchivesComponent;
@@ -8,9 +9,10 @@ describe('ArchivesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArchivesComponent ]
+      declarations: [ArchivesComponent],
+      imports: [MatTableModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

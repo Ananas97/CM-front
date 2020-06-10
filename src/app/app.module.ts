@@ -19,6 +19,10 @@ import {MatCardModule} from '@angular/material/card';
 import {ProgressComponent} from './analysis/progress/progress.component';
 import {DndDirective} from './analysis/dnd.directive';
 import {HttpClientModule} from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {CdkTableModule} from '@angular/cdk/table';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,10 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatChipsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    CdkTableModule,
+    MatListModule,
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent],

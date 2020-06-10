@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {FileUploadService} from './file-upload.service';
+import {ApiService} from '../shared/ApiService';
 
 @Component({
   selector: 'app-analysis',
@@ -10,7 +10,7 @@ export class AnalysisComponent {
   @ViewChild('fileDropRef', {static: false}) fileDropEl: ElementRef;
   files: any[] = [];
 
-  constructor(private fileUploadService: FileUploadService) {
+  constructor(private apiService: ApiService) {
   }
 
   /**
@@ -89,7 +89,7 @@ export class AnalysisComponent {
   }
 
   uploadFileToActivity() {
-    this.fileUploadService.postFile(this.files[0]).subscribe(data => {
+    this.apiService.uploadFile(this.files[0]).subscribe(data => {
       // do something, if upload success
     }, error => {
       console.log(error);
